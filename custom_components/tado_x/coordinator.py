@@ -127,6 +127,9 @@ class TadoXData:
     has_flow_temp_control: bool = False
     # Domestic hot water state (e.g., OFF, SCHEDULE_ON, SCHEDULE_OFF, BOOST)
     dhw_state: str | None = None
+    dhw_temperature: float | None = None
+    dhw_temp_min: float | None = None
+    dhw_temp_max: float | None = None
 
 
 class TadoXDataUpdateCoordinator(DataUpdateCoordinator[TadoXData]):
@@ -224,9 +227,20 @@ class TadoXDataUpdateCoordinator(DataUpdateCoordinator[TadoXData]):
 
             # Get domestic hot water state (optional)
             dhw_state = None
+            dhw_temperature = None
+            dhw_temp_min = None
+            dhw_temp_max = None
             if self.enable_hot_water:
                 dhw_state_response = await self.api.get_domestic_hot_water_state()
                 dhw_state = dhw_state_response.get("state")
+                setpoint = dhw_state_response.get("setpoint")
+                if isinstance(setpoint, dict):
+                    setpoint = setpoint.get("value")
+                if isinstance(setpoint, (int, float)):
+                    dhw_temperature = float(setpoint)
+                constraints = dhw_state_response.get("setpointConstraints") or {}
+                dhw_temp_min = constraints.get("min")
+                dhw_temp_max = constraints.get("max")
             
             # Get weather data (optional)
             weather = None
@@ -254,7 +268,10 @@ class TadoXDataUpdateCoordinator(DataUpdateCoordinator[TadoXData]):
                 presence=presence,
                 presence_locked=presence_locked,
                 weather=weather,
-                dhw_state=dhw_state
+                dhw_state=dhw_state,
+                dhw_temperature=dhw_temperature,
+                dhw_temp_min=dhw_temp_min,
+                dhw_temp_max=dhw_temp_max,
             )
 
             # Process rooms and devices

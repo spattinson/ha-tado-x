@@ -220,7 +220,8 @@
       "flow_temp_auto_adaptation": { "name": "Adattamento auto temperatura flusso" }
     },
     "number": {
-      "max_flow_temperature": { "name": "Temperatura massima flusso" }
+      "max_flow_temperature": { "name": "Temperatura massima flusso" },
+      "dhw_temperature": { "name": "Temperatura acqua calda" }
     },
     "button": {
       "boost_all": { "name": "Boost globale" },

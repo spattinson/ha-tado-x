@@ -288,6 +288,9 @@
     "number": {
       "max_flow_temperature": {
         "name": "Max Flow Temperature"
+      },
+      "dhw_temperature": {
+        "name": "Hot Water Temperature"
       }
     },
     "device_tracker": {

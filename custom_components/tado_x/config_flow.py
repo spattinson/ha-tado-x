@@ -275,8 +275,8 @@ class TadoXOptionsFlow(OptionsFlow):
             # Find all entities matching this feature
             # entity_registry.entities is a dict with entity_id as key
             for entity_id, entity_entry in entity_registry.entities.items():
-                # Only process Tado X sensor or button entities
-                if entity_entry.platform != DOMAIN or entity_entry.domain not in ("sensor", "button"):
+                # Only process Tado X sensor, button, select or number entities
+                if entity_entry.platform != DOMAIN or entity_entry.domain not in ("sensor", "button", "select", "number"):
                     continue
                 
                 # Check if this entity's unique_id ends with the feature key

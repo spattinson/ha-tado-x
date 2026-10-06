@@ -264,6 +264,9 @@
     "number": {
       "max_flow_temperature": {
         "name": "Max. Vorlauftemperatur"
+      },
+      "dhw_temperature": {
+        "name": "Warmwassertemperatur"
       }
     },
     "button": {
