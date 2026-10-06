@@ -4,7 +4,7 @@
 [![GitHub Release](https://img.shields.io/github/v/release/exabird/ha-tado-x)](https://github.com/exabird/ha-tado-x/releases)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Support-yellow?style=flat&logo=buy-me-a-coffee)](https://buymeacoffee.com/exabird)
 
-A Home Assistant custom integration for **Tado X** devices (the new generation of Tado smart thermostats and radiator valves).
+A Home Assistant custom integration for **Tado X** devices (the new generation of Tado smart thermostats and radiator valves). This fork adds Opentherm DHW temperature control.
 
 > **Note:** This integration is specifically designed for Tado X devices. For older Tado devices (V3+ and earlier), use the [official Tado integration](https://www.home-assistant.io/integrations/tado/).
 
