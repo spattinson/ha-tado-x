@@ -13,12 +13,12 @@ A Home Assistant custom integration for **Tado X** devices (the new generation o
 ## Quick Installation (HACS)
 
 ### Step 1: Add the repository
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=exabird&repository=ha-tado-x&category=integration)
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=spattinson&repository=ha-tado-x&category=integration)
 
 **Or manually:**
 1. Open HACS in Home Assistant
 2. Click **⋮** (top right) → **Custom repositories**
-3. Add `https://github.com/exabird/ha-tado-x` as **Integration**
+3. Add `https://github.com/spattinson/ha-tado-x` as **Integration**
 
 ### Step 2: Install & Restart
 1. Search "Tado X" in HACS → **Download**
